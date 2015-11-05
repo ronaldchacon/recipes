@@ -28,4 +28,5 @@ group :development do
   gem 'pry-byebug'
   gem 'quiet_assets'
   gem 'better_errors'
+  gem 'rails_layout'
 end
