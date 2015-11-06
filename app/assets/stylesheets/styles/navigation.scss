@@ -311,7 +311,7 @@ header.navigation {
       }
 
       button[type=submit] {
-        background: $navigation-search-background;
+        background: darken($navigation-search-background, 10);
         border: none;
         bottom: 0.3em;
         left: auto;
