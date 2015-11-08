@@ -23,7 +23,7 @@
   border-color: $button-color;
   &:hover, &:active, &:focus {
     color: $button-text-color;
-    background-color: darken($button-color, 10%);
+    background-color: shade($button-color, 10%);
   }
 }
 
