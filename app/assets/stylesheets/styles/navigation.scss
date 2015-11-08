@@ -268,8 +268,10 @@ header.navigation {
   .navigation-tools {
     background: #f9f9f9;
     clear: both;
-    display: block;
     height: $navigation-height;
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
 
     @include media($horizontal-bar-mode) {
       background: transparent;

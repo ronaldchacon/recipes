@@ -1,13 +1,14 @@
 .navigation-wrapper
-  %a.logo{href: 'javascript:void(0)'}
+  %a.logo{href: "javascript:void(0)" }
     %i.fa.fa-cutlery
-  %a#js-mobile-menu.navigation-menu-button{href: 'javascript:void(0)'} Menu
-  %nav{role: 'navigation'}
-    %ul#js-navigation-menu.navigation-menu.show
-      = render 'layouts/navigation_links'
+  %a#js-mobile-menu.navigation-menu-button{href: "javascript:void(0)"} Menu
+  %nav{ role: "navigation"}
+    %ul.navigation-menu.show#js-navigation-menu
+      = render "layouts/navigation_links"
   .navigation-tools
     .search-bar
       %form.search
-        %input{type: 'search', placeholder: 'Search for recipes'}
-        %button{type: 'submit'}
-          = image_tag 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png', alt: 'Search Icon'
+        %input{type: "search", placeholder: "Search for recipes" }
+        %button{type: "submit" }
+          = image_tag "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png", alt: "Search Icon"
+    = link_to "Sign In", "#", class: "button"
