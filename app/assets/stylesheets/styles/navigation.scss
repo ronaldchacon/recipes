@@ -334,7 +334,7 @@ header.navigation {
     @include media($horizontal-bar-mode) {
       display: inline-block;
       position: relative;
-      width: 16em;
+      width: 24em;
 
       input {
         @include box-sizing(border-box);

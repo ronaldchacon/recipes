@@ -11,4 +11,8 @@
         %input{type: "search", placeholder: "Search for recipes" }
         %button{type: "submit" }
           = image_tag "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png", alt: "Search Icon"
-    = link_to "Sign In", "#", class: "button"
+
+    - if user_signed_in?
+      = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'button'
+    - else
+      = link_to "Sign In", new_user_session_path, class: "button-blue"

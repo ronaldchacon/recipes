@@ -1,0 +1,53 @@
+// ==========
+// USER#SIGNUP
+// ==========
+
+.signup-wrapper {
+  @include outer-container;
+  padding-top: 2em;
+}
+
+.signup {
+  @include panel;
+  @include pad(default);
+  @include span-columns(10);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+  .action {
+    float: right;
+  }
+}
+
+// ==========
+// USER#SIGNIN
+// ==========
+
+.signin-wrapper {
+  @include outer-container;
+  padding-top: 2em;
+}
+
+.signin {
+  @include panel;
+  @include pad(default);
+  @include span-columns(10);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+
+  .actions {
+    float: right;
+  }
+
+  a {
+    @include display(block);
+    @include clearfix;
+  }
+}

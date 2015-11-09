@@ -1,3 +1,28 @@
+// TYPEOGRAPHY
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.83em;
+}
+
+h6 {
+  font-size: 0.67em;
+}
+
 @mixin button-base {
   appearance: none;
   border: 1px solid;
@@ -34,4 +59,37 @@
 
 .button {
   @extend %button;
+}
+
+.button-blue {
+  @extend %button;
+  @include button-colors(#55acee)
+}
+
+.button-red {
+  @extend %button;
+  @include button-colors(#ff4c4c);
+}
+
+.button-green {
+  @extend %button;
+  @include button-colors(#34bf49)
+}
+
+@mixin panel {
+  border: 1px solid #ddd;
+  border-radius: $base-border-radius;
+  background-color: #fff
+}
+
+.flash {
+  position: relative;
+  .close {
+    @include position(absolute, 0 0 null null);
+    @include margin(null 20px null null);
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+  }
 }

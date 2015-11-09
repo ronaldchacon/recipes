@@ -18,6 +18,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'haml-rails', '~> 0.9.0'
 gem 'font-awesome-sass', '~> 4.4'
 gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'jquery-turbolinks', '~> 2.1'
 
 group :development, :test do
   gem 'byebug'
