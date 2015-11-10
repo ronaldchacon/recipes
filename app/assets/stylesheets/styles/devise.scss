@@ -51,3 +51,36 @@
     @include clearfix;
   }
 }
+
+// ==========
+// DEVISE#PASSWORD
+// ==========
+
+.password-wrapper {
+  @include outer-container;
+  padding-top: 2em;
+}
+
+.forgot-password {
+  @include panel;
+  @include pad(default);
+  @include span-columns(10);
+  @include shift(1);
+
+  @include media($large-screen) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+
+  .actions {
+    @include clearfix;
+    input {
+      float: right;
+    }
+  }
+
+  a {
+    @include display(block);
+    @include clearfix;
+  }
+}
