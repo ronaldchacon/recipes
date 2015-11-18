@@ -22,6 +22,8 @@ gem 'jquery-turbolinks', '~> 2.1'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -32,4 +34,12 @@ group :development do
   gem 'quiet_assets'
   gem 'better_errors'
   gem 'rails_layout'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
