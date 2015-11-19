@@ -14,5 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require cocoon
+//= require isotope.pkgd
 //= require_tree .
 //= require turbolinks
