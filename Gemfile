@@ -20,6 +20,7 @@ gem 'font-awesome-sass', '~> 4.4'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.6'
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 group :development, :test do
   gem 'byebug'
