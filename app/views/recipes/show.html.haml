@@ -1,0 +1,18 @@
+%section.recipe-wrapper
+  = image_tag @recipe.picture(:medium)
+  %h1= @recipe.name
+  %p= @recipe.description
+
+  %hr
+
+  %h2 Ingredients
+  %ol
+    - @recipe.ingredients.each do |i|
+      %li #{i.quantity} - #{i.name}
+
+  %hr
+
+  %h2 Directions
+  %ol
+    - @recipe.directions.each do |d|
+      %li= d.step
