@@ -1,7 +1,7 @@
 %section.recipe-wrapper
   = image_tag @recipe.picture(:medium)
   %h1= @recipe.name
-  %p= @recipe.description
+  %p= @recipe.description? ? @recipe.description : "No description available."
 
   %hr
 

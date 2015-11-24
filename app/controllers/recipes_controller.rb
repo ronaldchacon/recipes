@@ -1,14 +1,18 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @recipes = current_user.recipes.all
+  end
+
   def new
     @recipe = Recipe.new
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user
-    if @recipe.save
+    recipe = Recipe.new(recipe_params)
+    recipe.user = current_user
+    if recipe.save
       flash[:success] = "Successfully submitted your recipe"
       redirect_to root_path
     else
@@ -18,12 +22,17 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
+    if current_user && current_user.recipes.find(params[:id])
+      @recipe = Recipe.find(params[:id])
+    else
+      flash[:error] = "You do not have permission to edit this recipe"
+      redirect_to root_path
+    end
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
-    @recipe.update(recipe_params)
+    recipe = Recipe.find(params[:id])
+    recipe.update(recipe_params)
     flash[:success] = "Successfully updated recipe"
     redirect_to root_path
   end

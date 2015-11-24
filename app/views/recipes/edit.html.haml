@@ -1,0 +1,34 @@
+%section.edit-recipe-wrapper
+  %h1 New Recipe
+
+  = form_for(@recipe) do |f|
+    = f.label :name
+    = f.text_field :name
+
+    = f.label :description
+    = f.text_area :description, rows: 5
+
+    = f.label :picture, "Recipe Image"
+    = f.file_field :picture
+
+    %p Current Image
+    = image_tag @recipe.picture(:small)
+
+    %hr
+    .recipe-wrapper
+      .ingredients
+        %h2 Ingredients
+        = f.fields_for :ingredients do |ingredient|
+          = render "ingredient_fields", f: ingredient
+        .links
+          = link_to_add_association "add ingredient", f, :ingredients
+
+      .directions
+        %h2 Directions
+        = f.fields_for :directions do |direction|
+          = render "direction_fields", f: direction
+        .links
+          = link_to_add_association "add step", f, :directions
+
+    .actions
+      = f.submit "Submit", class: "button-blue"

@@ -1,0 +1,4 @@
+%section.user-recipes-wrapper
+  - @recipes.each do |recipe|
+    %span Recipe Name: #{ recipe.name } | #{ link_to "Edit Recipe", edit_recipe_path(recipe) }
+    %hr
