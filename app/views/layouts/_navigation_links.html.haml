@@ -1,3 +1,13 @@
 -# add navigation links to this file
--# %li.nav-link
--#   %a{href: 'javascript:void(0)'} Recipes
+
+- if user_signed_in?
+  %li.nav-link
+    %a{ href: "javascript:void(0)" } Your Recipes
+  %li.nav-link
+    %a{ href: "javascript:void(0)" } Saved Recipes
+  %hr
+  %li.nav-link
+    = link_to "Sign Out", destroy_user_session_path, method: :delete
+- else
+  %li.nav-link
+    = link_to "Sign In", new_user_session_path

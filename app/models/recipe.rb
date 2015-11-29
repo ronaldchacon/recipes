@@ -16,4 +16,8 @@ class Recipe < ActiveRecord::Base
 
   validates :name, :user_id, presence: true
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
 end

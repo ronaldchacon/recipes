@@ -78,7 +78,7 @@ header.navigation {
     z-index: 9999999;
 
     @include media ($horizontal-bar-mode) {
-      float: left;
+      display: none;
     }
   }
 
@@ -99,6 +99,10 @@ header.navigation {
       display: inline;
       margin: 0;
       padding: 0;
+    }
+
+    hr {
+      margin: 0;
     }
   }
 
@@ -273,10 +277,18 @@ header.navigation {
     @include justify-content(center);
     @include align-items(center);
 
+    .button, .button-blue {
+      display: none;
+    }
+
     @include media($horizontal-bar-mode) {
       background: transparent;
       clear: none;
       float: right;
+
+      .button, .button-blue {
+        display: block;
+      }
     }
   }
 

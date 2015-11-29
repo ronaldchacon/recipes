@@ -7,9 +7,9 @@
       = render "layouts/navigation_links"
   .navigation-tools
     .search-bar
-      %form.search
-        %input{type: "search", placeholder: "Search for recipes" }
-        %button{type: "submit" }
+      = form_tag(welcome_index_path, method: :get, class: "search") do
+        = search_field_tag :search, nil, placeholder: "Search Recipes"
+        = button_tag do
           = image_tag "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png", alt: "Search Icon"
 
     - if user_signed_in?
